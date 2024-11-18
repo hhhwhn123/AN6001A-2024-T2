@@ -1,3 +1,6 @@
+#
+#Syn code space is very high risk, somrtimes fail
+
 from flask import Flask
 from flask import render_template, request
 
