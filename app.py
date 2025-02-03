@@ -9,7 +9,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET","POSTpython "])
+@app.route("/", methods=["GET","POST"])
 def index():
     return(render_template("index.html"))
 
@@ -46,6 +46,11 @@ def ask_gemini(q):
     r = model.generate_content(q)
     text = r.candidates[0].content.parts[0].text
     return text
+
+@app.route("/paynow", methods=["GET", "POST"])
+def paynow():
+    
+    return render_template("paynow.html")
 
 if __name__ == "__main__":
     app.run()
